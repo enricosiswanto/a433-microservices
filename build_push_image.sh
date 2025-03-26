@@ -16,9 +16,7 @@ docker images
 docker tag $IMAGE_NAME:$TAG $GHCR_IMAGE
 
 # Login ke GitHub Container Registry
-echo "Masukkan Personal Access Token (PAT) GitHub:"
-read -s PAT
-echo $PAT | docker login ghcr.io -u $GHCR_USERNAME --password-stdin
+echo $GHCR_PWD | docker login ghcr.io -u $GHCR_USERNAME --password-stdin
 
 # Push image ke GitHub Packages
 docker push $GHCR_IMAGE
